@@ -3,19 +3,17 @@
 <html>
 
 <head>
-    <title>Weather</title>
+    <title>404</title>
       <link rel="icon" href="../../public/images/weather.png">
     <link rel="stylesheet" href="../../public/css/styles.css">
-    <script defer src="../../public/js/app.js"></script>
 </head>
 
 <body>
     <div class="main-content">
         {{>header}}
-
-        <p>Use this site to get your weather!</p>
+        <p>{{errorMessage}}</p>
     </div>
-
+    
     {{>footer}}
 </body>
 

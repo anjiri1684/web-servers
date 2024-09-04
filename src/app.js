@@ -37,6 +37,14 @@ app.get("/help", (req, res) => {
   });
 });
 
+app.get("*", (req, res) => {
+  res.render("404", {
+    title: "404",
+    description:
+      "Sorry this page is current unavailable kindly try again later",
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
