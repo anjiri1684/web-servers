@@ -1,14 +1,17 @@
 const path = require("path");
 const express = require("express");
+const hbs = require("hbs");
 
 const app = express();
 const port = 8080;
 
 const publicDirectory = path.join(__dirname, "../public");
-const viewsPath = path.join(__dirname, "../templates");
+const viewsPath = path.join(__dirname, "../templates/views");
+const partialsPath = path.join(__dirname, "../templates/partials");
 
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
+hbs.registerPartials(partialsPath);
 
 app.use(express.static(publicDirectory));
 
@@ -30,6 +33,7 @@ app.get("/help", (req, res) => {
   res.render("help", {
     title: "Get Help",
     getHelp: "Visit our offices for assistance",
+    name: "Vincent Anjiri",
   });
 });
 
